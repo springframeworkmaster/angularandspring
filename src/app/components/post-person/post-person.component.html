@@ -1,0 +1,47 @@
+<h2>Add Person</h2>
+<div class="card card-body mb-3">
+  <form>
+    <div class="form-group">
+      <label>FirstName</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.firstName" name="firstName" #firstName>
+    </div>
+    <div class="form-group">
+      <label>lastName</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.lastName" name="lastName" #lastName>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.email" name="email" #email>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.phone" name="phone" #phone>
+    </div>
+    <div class="form-group">
+      <label>Street</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.address.streetName" name="streetName" #streetName>
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.address.city" name="city" #city>
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" class="form-control" [(ngModel)]="currentPerson.address.state" name="state" #state>
+    </div>
+    <div class="form-group">
+      <label>PinCode</label>
+      <input type="number" class="form-control" [(ngModel)]="currentPerson.address.pincode" name="pincode" #pincode> 
+    </div>
+    <input type="hidden" [(ngModel)]="currentPerson.id" name="id">
+    <input type="hidden" [(ngModel)]="currentPerson.address.id" name="id1">
+    <button *ngIf="!isEdit" (click)="savePerson(firstName.value,
+     lastName.value, email.value, phone.value,
+     streetName.value, city.value, state.value, pincode.value)"
+     class="btn btn-dark btn-block">Add Post</button>
+     
+     <button *ngIf="isEdit" (click)="updatePerson()"
+     class="btn btn-warning btn-block">Edit Post</button>
+    
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6">
+    <app-post-person [currentPerson]="currentPerson" [isEdit]="isEdit" (newPerson)="onNewPerson($event)" (updatedPerson)="onUpdatedPerson($event)"></app-post-person>
+  </div>
+  <div class="col-6" >
+    <h2>Persons</h2>
+    <ul class="list-styled">
+        <li class="card card-body mb-2"  *ngFor="let person of persons">
+              <h3>{{person.firstName }} {{person.lastName }} <small><button class="btn btn-dark btn-sm" (click)="person.hide= !person.hide">
+                  <i [ngClass]="person.hide ? 'fa fa-plus' : 'fa fa-minus'"></i></button></small>  
+              </h3>
+                <small><button (click)="removePerson(person)" class="btn btn-danger btn-sm pull-right"><i class="fa fa-remove"></i></button>
+                <button (click)="editPerson(person)" class="btn btn-light btn-sm pull-right"><i class="fa fa-pencil"></i></button>
+                </small>
+                  <hr>  
+                <ul class="list-group" *ngIf="person.hide">
+                  <li class="list-group-item">email: {{ person.email }}</li>
+                  <li class="list-group-item">phone: {{ person.phone }}</li>
+                  <li class="list-group-item">street: {{ person.address.streetName }}</li>
+                  <li class="list-group-item">city: {{ person.address.city }}</li>
+                  <li class="list-group-item">state: {{ person.address.state }}</li>
+                  <li class="list-group-item">pincode: {{ person.address.pincode }}</li>
+                </ul>                
+        </li> 
+      </ul>
+  </div>
+</div>
