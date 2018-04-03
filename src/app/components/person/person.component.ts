@@ -22,7 +22,7 @@ export class PersonComponent implements OnInit {
         streetName: '',
         city: '',
         state: '',
-        pincode: 0
+        pincode: null
     }
   }
 
@@ -46,7 +46,7 @@ export class PersonComponent implements OnInit {
       if(person.id === cur.id){
         this.persons.splice(index, 1);
         this.persons.unshift(person);
-        this.isEdit= false;
+        this.isEdit= true;
         this.currentPerson = {
           id: 0,
           firstName: '',
@@ -58,7 +58,7 @@ export class PersonComponent implements OnInit {
               streetName: '',
               city: '',
               state: '',
-              pincode: 0
+              pincode: null
           }
         }
       }
@@ -80,11 +80,7 @@ export class PersonComponent implements OnInit {
            
           }
         });
-
-
       });
     }
-    
-
   }
 }

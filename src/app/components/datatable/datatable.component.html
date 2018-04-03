@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="firstName">
+          <mat-header-cell *matHeaderCellDef>FirstName</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.firstName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef>LastName</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.lastName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.email}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.phone}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="streetName">
+          <mat-header-cell *matHeaderCellDef>Street</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.address.streetName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="city">
+          <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.address.city}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.address.state}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="pincode">
+          <mat-header-cell *matHeaderCellDef>Pincode</mat-header-cell>
+          <mat-cell *matCellDef="let person">{{ person.address.pincode}}</mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+</div>

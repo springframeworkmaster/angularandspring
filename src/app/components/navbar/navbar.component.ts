@@ -1,4 +1,3 @@
-import { UsersComponent } from './../users/users.component';
 import { Component, OnInit } from '@angular/core';
 
 

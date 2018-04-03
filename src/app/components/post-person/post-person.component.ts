@@ -33,7 +33,21 @@ export class PostPersonComponent implements OnInit {
                                           pincode
                                 }} as Person).subscribe(person => {
                                   this.newPerson.emit(person);
-                                })  
+                                }); 
+                                this.currentPerson = {
+                                  id: 0,
+                                  firstName: '',
+                                  lastName: '',
+                                  email: '',
+                                  phone: '',
+                                  address: {
+                                      id: 0,
+                                      streetName: '',
+                                      city: '',
+                                      state: '',
+                                      pincode: null
+                                  }
+                                }
   }
   
   updatePerson(){
